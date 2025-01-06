@@ -1,0 +1,43 @@
+
+name: The Checklist for Update Release PR
+
+on:
+  pull_request:
+    types: [ labeled ]
+
+jobs:
+  update_pr:
+    name: The Checklist for Update Release PR
+    if: ${{ github.event.label.name == 'Release PR' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Branch
+        id: check-branch
+        run: |
+          if [[ ${{ github.base_ref }} == master || ${{ github.base_ref }} == dev || ${{ github.base_ref }} == next-release ]]; then
+              echo ::set-output name=match::true
+          fi
+      - uses: tzkhan/pr-update-action@v2
+        if: steps.check-branch.outputs.match == 'true'
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          base-branch-regex: '[A-Za-z\d-_.\\/]+'
+          head-branch-regex: '[A-Za-z\d-_.\\/]+'
+          body-template: |
+            ---
+            ### Release Checklist:
+            - [ ] Updated changelog in changelog.txt
+            - [ ] Updated changelog in readme.txt
+            - [ ] Verify changelog `date` and `content` as per CartFlows format.
+            - [ ] Run command `grunt bump-version --ver=<version-number>`
+            - [ ] Verify version in `cartflows.php` in plugin description and constant `CARTFLOWS_VER` in classes/class-cartflows-loader.php
+            - [ ] Verify the since x.x.x is changed to the latest version number if available.
+            - [ ] Update version in `package.json`
+            - [ ] Verify `Stable tag` is `<version-number>` in readme.txt
+            - [ ] Verify `Tested up-to` is set to latest tested version of WordPress.
+            - [ ] Run command : `npm run all-builds` to generate build for main app and wizard, generate the minify and RTL the CSS & JS files.
+            - [ ] Generate POT file with command : `npm run i18n`
+            - [ ] Verify the changes by `git diff` and Commit the changes
+            ---
+          body-update-action: 'suffix'
+          body-uppercase-base-match: false
