@@ -132,7 +132,6 @@ module.exports = function ( grunt ) {
 
 	/* Register task started */
 	grunt.registerTask( 'release', [
-		'minify',
 		'clean:zip',
 		'copy',
 		'compress',

@@ -22,7 +22,7 @@ if ( ! class_exists( 'Deactivation_Survey_Feedback' ) ) {
 		 *
 		 * @var string
 		 */
-		private static $feedback_api_endpoint = '/submit-feedback';
+		private static $feedback_api_endpoint = 'submit-feedback';
 
 		/**
 		 * Feedback URL.
