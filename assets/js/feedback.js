@@ -5,6 +5,7 @@
 		formWrapper: '',
 		radioButton: '',
 		closeButton: '',
+		buttonAction: '',
 		feedbackForm: '',
 		feedbackInput: '',
 		deactivateUrl: '',
@@ -125,7 +126,7 @@
 			};
 
 			currentForm
-				.find( this.submitDeactivate )
+				.find( '.uds-feedback-' + this.buttonAction )
 				.text( 'Deactivating.' )
 				.addClass( 'processing' );
 
@@ -216,6 +217,7 @@
 				.add( this.skipButton )
 				.on( 'click', function ( event ) {
 					event.preventDefault(); // Prevent default button action.
+					self.buttonAction = $( event.target ).attr( 'data-action' );
 					$( event.target ).closest( self.feedbackForm ).submit();
 				} );
 
@@ -232,4 +234,4 @@
 	$( function () {
 		UserDeactivationPopup._init();
 	} );
-} ( jQuery ));
+} )( jQuery );
