@@ -15,5 +15,5 @@ To integrate this library in your plugin or theme, follow this easy and step-by-
 ## Changelog
 
 = Version 1.0.0 - Development =
-* Initial release of the Deactivation Survey Library.
 
+-   Initial release of the Deactivation Survey Library.

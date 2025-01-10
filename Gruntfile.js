@@ -184,7 +184,7 @@ module.exports = function ( grunt ) {
 
 	// Bump Version - `grunt version-bump --ver=<version-number>`
 	grunt.registerTask( 'version-bump', function ( ver ) {
-		var newVersion = grunt.option( 'ver' );
+		let newVersion = grunt.option( 'ver' );
 		if ( newVersion ) {
 			newVersion = newVersion ? newVersion : 'patch';
 

@@ -9,3 +9,4 @@ vendor
 *.min.js*
 *.min.css*
 tests
+Gruntfile.js
