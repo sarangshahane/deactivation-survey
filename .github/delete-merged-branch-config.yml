@@ -1,0 +1,6 @@
+exclude:
+  - master
+  - dev
+  - rc
+  - milestone
+delete_closed_pr: true
