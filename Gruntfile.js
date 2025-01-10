@@ -118,6 +118,56 @@ module.exports = function ( grunt ) {
 				],
 			},
 		},
+
+		bumpup: {
+			options: {
+				updateProps: {
+					pkg: 'package.json',
+				},
+			},
+			file: 'package.json',
+		},
+
+		replace: {
+			plugin_main: {
+				src: [ 'deactivation-survey.php' ],
+				overwrite: true,
+				replacements: [
+					{
+						from: /Version: \bv?(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[\da-z-A-Z-]+(?:\.[\da-z-A-Z-]+)*)?(?:\+[\da-z-A-Z-]+(?:\.[\da-z-A-Z-]+)*)?\b/g,
+						to: 'Version: <%= pkg.version %>',
+					},
+				],
+			},
+			plugin_const: {
+				src: [ 'deactivation-survey.php' ],
+				overwrite: true,
+				replacements: [
+					{
+						from: /UDS_VER', '.*?'/g,
+						to: "UDS_VER', '<%= pkg.version %>'",
+					},
+				],
+			},
+			plugin_function_comment: {
+				src: [
+					'*.php',
+					'**/*.php',
+					'!node_modules/**',
+					'!php-tests/**',
+					'!bin/**',
+					'!tests/**',
+					'!vendor/**',
+				],
+				overwrite: true,
+				replacements: [
+					{
+						from: 'x.x.x',
+						to: '<%=pkg.version %>',
+					},
+				],
+			},
+		},
 	} );
 
 	/* Load Tasks */
@@ -127,8 +177,21 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-clean' );
 	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+	grunt.loadNpmTasks( 'grunt-bumpup' );
+	grunt.loadNpmTasks( 'grunt-text-replace' );
 
 	grunt.registerTask( 'minify', [ 'rtlcss', 'cssmin:css', 'uglify:js' ] );
+
+	// Bump Version - `grunt version-bump --ver=<version-number>`
+	grunt.registerTask( 'version-bump', function ( ver ) {
+		var newVersion = grunt.option( 'ver' );
+		if ( newVersion ) {
+			newVersion = newVersion ? newVersion : 'patch';
+
+			grunt.task.run( 'bumpup:' + newVersion );
+			grunt.task.run( 'replace' );
+		}
+	} );
 
 	/* Register task started */
 	grunt.registerTask( 'release', [

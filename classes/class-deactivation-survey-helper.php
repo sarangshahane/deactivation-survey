@@ -92,7 +92,7 @@ if ( ! class_exists( 'Deactivation_Survey_Helper' ) ) {
 		/**
 		 * Get API headers
 		 *
-		 * @since x.x.x
+		 * @since 1.0.0
 		 * @return array<string, string>
 		 */
 		public static function get_api_headers() {
@@ -105,7 +105,7 @@ if ( ! class_exists( 'Deactivation_Survey_Helper' ) ) {
 		/**
 		 * Get the API URL.
 		 *
-		 * @since  x.x.x
+		 * @since  1.0.0
 		 *
 		 * @return string
 		 */
@@ -116,7 +116,7 @@ if ( ! class_exists( 'Deactivation_Survey_Helper' ) ) {
 		/**
 		 * Get the API Base.
 		 *
-		 * @since  x.x.x
+		 * @since  1.0.0
 		 *
 		 * @return string
 		 */
@@ -128,7 +128,7 @@ if ( ! class_exists( 'Deactivation_Survey_Helper' ) ) {
 		/**
 		 * Get the API target URL.
 		 *
-		 * @since  x.x.x
+		 * @since  1.0.0
 		 *
 		 * @param string $endpoint The API endpoint.
 		 * @return string The full API target URL.
@@ -143,7 +143,7 @@ if ( ! class_exists( 'Deactivation_Survey_Helper' ) ) {
 		 * This function checks if the current screen is one of the allowed screens for displaying the survey.
 		 * It uses the `get_current_screen` function to get the current screen information and compares it with the list of allowed screens.
 		 *
-		 * @since x.x.x
+		 * @since 1.0.0
 		 * @return bool True if the current screen is allowed, false otherwise.
 		 */
 		public static function is_allowed_screen() {

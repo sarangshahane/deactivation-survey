@@ -29,14 +29,14 @@ if ( ! class_exists( 'Deactivation_Survey_Feedback' ) ) {
 		 *
 		 * @access private
 		 * @var object Class object.
-		 * @since x.x.x
+		 * @since 1.0.0
 		 */
 		private static $instance;
 
 		/**
 		 * Initiator
 		 *
-		 * @since x.x.x
+		 * @since 1.0.0
 		 * @return object initialized object of class.
 		 */
 		public static function get_instance() {
@@ -60,7 +60,7 @@ if ( ! class_exists( 'Deactivation_Survey_Feedback' ) ) {
 		 * This function renders the feedback form HTML on the plugins.php admin page.
 		 * It takes an optional string parameter $id for the form wrapper ID and an optional array parameter $args for customizing the form.
 		 *
-		 * @since x.x.x
+		 * @since 1.0.0
 		 * @param string $id Optional. The ID for the form wrapper. Defaults to 'uds-feedback-form--wrapper'.
 		 * @param array  $args Optional. Custom arguments for the form. Defaults to an empty array.
 		 * @return void
@@ -167,7 +167,7 @@ if ( ! class_exists( 'Deactivation_Survey_Feedback' ) ) {
 		 *
 		 * This function loads the necessary styles for the feedback form.
 		 *
-		 * @since x.x.x
+		 * @since 1.0.0
 		 * @return void
 		 */
 		public static function load_form_styles() {

@@ -3,7 +3,7 @@
  * Plugin Loader.
  *
  * @package deactivation-survey
- * @since x.x.x
+ * @since 1.0.0
  */
 
 namespace UDS_Loader;
