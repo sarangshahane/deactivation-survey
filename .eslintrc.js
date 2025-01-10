@@ -4,6 +4,7 @@ module.exports = {
 		camelcase: 'off',
 		'no-console': 'off',
 		'no-alert': 'off',
+		'wrap-iife': 'off',
 		'space-before-function-paren': 'off',
 		'no-mixed-spaces-and-tabs': 'off',
 		'@wordpress/i18n-text-domain': [
