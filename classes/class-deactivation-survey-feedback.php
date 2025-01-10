@@ -25,13 +25,6 @@ if ( ! class_exists( 'Deactivation_Survey_Feedback' ) ) {
 		private static $feedback_api_endpoint = 'submit-feedback';
 
 		/**
-		 * Feedback URL.
-		 *
-		 * @var string
-		 */
-		private static $plugin_slugs = [];
-
-		/**
 		 * Instance
 		 *
 		 * @access private
