@@ -136,24 +136,6 @@ if ( ! class_exists( 'UDS_Plugin_Loader' ) ) {
 		}
 
 		/**
-		 * Check if the latest library is already loaded and its version.
-		 *
-		 * @return bool
-		 */
-		private function is_library_loaded() {
-			global $uds_library_version; // Access the global variable.
-			if ( class_exists( 'Deactivation_Survey_Helper' ) && defined( 'UDS_VER' ) ) {
-				// Check if the loaded library version is the latest.
-				if ( version_compare( $uds_library_version, UDS_VER, '>=' ) ) {
-					return true; // Latest library is already loaded.
-				}
-				// If the library is loaded, set the global variable to the existing version.
-				$uds_library_version = UDS_VER;
-			}
-			return false; // Library is not loaded.
-		}
-
-		/**
 		 * Load Library Classes
 		 *
 		 * @since 1.0.0
@@ -161,12 +143,6 @@ if ( ! class_exists( 'UDS_Plugin_Loader' ) ) {
 		 * @return void
 		 */
 		public function load_classes() {
-
-			// Check if the library is already loaded.
-			if ( $this->is_library_loaded() ) {
-				// The existing library version is newer or the same, skip loading.
-				return;
-			}
 
 			// Load the helper classes.
 			require_once UDS_DIR . 'classes/class-deactivation-survey-helper.php';
