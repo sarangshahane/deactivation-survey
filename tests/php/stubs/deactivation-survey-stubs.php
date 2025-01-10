@@ -9,7 +9,7 @@ namespace {
         /**
          * Initiator
          *
-         * @since x.x.x
+         * @since 1.0.0
          * @return object initialized object of class.
          */
         public static function get_instance()
@@ -24,7 +24,7 @@ namespace {
         /**
          * Register feedback script on plugins.php admin page only.
          *
-         * @since x.x.x
+         * @since 1.0.0
          * @param string $hook_suffix The current hook.
          * @return void
          */
@@ -37,7 +37,7 @@ namespace {
          * This function renders the feedback form HTML on the plugins.php admin page.
          * It takes an optional string parameter $id for the form wrapper ID and an optional array parameter $args for customizing the form.
          *
-         * @since x.x.x
+         * @since 1.0.0
          * @param string $id Optional. The ID for the form wrapper. Defaults to 'uds-feedback-form--wrapper'.
          * @param array  $args Optional. Custom arguments for the form. Defaults to an empty array.
          * @return void
@@ -50,7 +50,7 @@ namespace {
          *
          * This function loads the necessary styles for the feedback form.
          *
-         * @since x.x.x
+         * @since 1.0.0
          * @param array $args Arguments.
          * @return void
          */
@@ -137,14 +137,14 @@ namespace UDS_Loader {
     /**
      * UDS_Plugin_Loader
      *
-     * @since X.X.X
+     * @since 1.0.0
      */
     class UDS_Plugin_Loader
     {
         /**
          * Initiator
          *
-         * @since X.X.X
+         * @since 1.0.0
          * @return object initialized object of class.
          */
         public static function get_instance()
@@ -161,7 +161,7 @@ namespace UDS_Loader {
         /**
          * Constructor
          *
-         * @since X.X.X
+         * @since 1.0.0
          */
         public function __construct()
         {
@@ -172,7 +172,7 @@ namespace UDS_Loader {
          *   1. Global Languages /wp-content/languages/user-deactivation-survey/ folder
          *   2. Local dorectory /wp-content/plugins/user-deactivation-survey/languages/ folder
          *
-         * @since X.X.X
+         * @since 1.0.0
          * @return void
          */
         public function load_textdomain()

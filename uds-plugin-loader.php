@@ -13,7 +13,7 @@ if ( ! class_exists( 'UDS_Plugin_Loader' ) ) {
 	/**
 	 * UDS_Plugin_Loader
 	 *
-	 * @since X.X.X
+	 * @since 1.0.0
 	 */
 	class UDS_Plugin_Loader {
 
@@ -22,14 +22,14 @@ if ( ! class_exists( 'UDS_Plugin_Loader' ) ) {
 		 *
 		 * @access private
 		 * @var UDS_Plugin_Loader Class Instance.
-		 * @since X.X.X
+		 * @since 1.0.0
 		 */
 		private static $instance;
 
 		/**
 		 * Initiator
 		 *
-		 * @since X.X.X
+		 * @since 1.0.0
 		 * @return object initialized object of class.
 		 */
 		public static function get_instance() {
@@ -70,7 +70,7 @@ if ( ! class_exists( 'UDS_Plugin_Loader' ) ) {
 		/**
 		 * Constructor
 		 *
-		 * @since X.X.X
+		 * @since 1.0.0
 		 */
 		public function __construct() {
 
@@ -86,7 +86,7 @@ if ( ! class_exists( 'UDS_Plugin_Loader' ) ) {
 		 *   1. Global Languages /wp-content/languages/user-deactivation-survey/ folder
 		 *   2. Local dorectory /wp-content/plugins/user-deactivation-survey/languages/ folder
 		 *
-		 * @since X.X.X
+		 * @since 1.0.0
 		 * @return void
 		 */
 		public function load_textdomain() {
