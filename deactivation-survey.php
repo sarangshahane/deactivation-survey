@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: User Deactivation Survery
+ * Plugin Name: User Deactivation Survey
  * Description: This plugin is used to collect feedback before deactivating the plugin.
  * Author: Brainstorm Force
  * Author URI: https://brainstormforce.com/
