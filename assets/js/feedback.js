@@ -234,4 +234,4 @@
 	$( function () {
 		UserDeactivationPopup._init();
 	} );
-} )( jQuery );
+} ( jQuery ));
